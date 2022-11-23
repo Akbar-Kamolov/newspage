@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block news %}
+    <div class="section">
+        <div class="columns">
+            {% for post in news %}
+                <a href="{% url 'newspage:detail' post.slug %}">
+                <div class="title">{{ post.title }}</div>
+                <div class="title">{{ post.views }}</div>
+                <div class="title">{{ post.total_likes }}</div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
